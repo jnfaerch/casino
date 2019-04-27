@@ -106,4 +106,5 @@ body {
     border-radius: 2px;
     border: 1.4px solid #9A0932;
     margin-bottom: 20px;
+    cursor: pointer;
 }
