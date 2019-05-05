@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Company name</title>
+    <meta name="description" content="Description of the page less than 150 characters">
+    <meta name="theme-color" content="#9A0932">
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- For Chrome for Android: -->
+    <link rel="icon" sizes="192x192" href="touch-icon-192x192.png">
+    <!-- Apple Touch Icon (at least 200x200px) -->
+    <link rel="apple-touch-icon" href="custom-icon.png">
+    <!-- To run web application in full-screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jackpot">
+        <h1>Bingo!</h1>
+        <div>
+            <span id="upload" title="Upload" alt="Upload"><i class="fas fa-file-upload fa-2x"></i></span>
+            <span id="login" title="Login" alt="Login"><i class="fas fa-sign-in-alt fa-2x"></i></span>
+            <span id="logout" title="Logout" alt="Logout"><i class="fas fa-sign-out-alt fa-2x"></i></span>
+        </div>
+    </div>
+
+    <!-- The Upload Modal -->
+    <div>
+        <div id="uploadModal" class="modal">
+             <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close"><i class="fas fa-times fa-2x"></i></span>
+                    <h2>Upload a new file</h2>
+                </div>
+                <div class="modal-body">
+                    <progress value="0" max="100" id="uploader"></progress><br />
+                    <input type="file" value="upload" id="fileButton">
+                </div>
+                <div class="modal-footer">
+                    <h3>You need an account to upload files!<br />Please note that any file uploaded will be available to the public (including Google).</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Login Modal -->
+    <div>
+        <div id="loginModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close"><i class="fas fa-times fa-2x"></i></span>
+                    <h2>Login to upload files</h2>
+                </div>
+                <div class="modal-body">
+                    <form onsubmit="loginForm(); return false;">
+                        <input type="text" placeholder="email" name="email" id="email">
+                        <input type="password" placeholder="password" name="password" id="password">
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <h3>You need an account to upload files!<br />Please note that any file uploaded will be available to the public (including Google).</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blackjack">
+        <div class="dealer"></div>
+        <div class="on-the-table">
+            <div class="half"></div>
+            <div class="secret">
+                <h1>Show us the money</h1>
+                <p>Download the files below to get any information concerning our business</p>
+            </div>
+        </div>
+    </div>
+    <div class="hotel">
+        <div class="casino">
+            <h2>Get your files</h2>
+            <div class="red-carpet"></div>
+            <div id="file-container" class="file-container"></div>
+            <div class="red-carpet"></div>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="/javascript/script.js"></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="/__/firebase/5.11.1/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="/__/firebase/5.11.1/firebase-auth.js"></script>
+    <script src="/__/firebase/5.11.1/firebase-storage.js"></script>
+    <script src="/__/firebase/5.11.1/firebase-firestore.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCvSF9o_VVHAnEo6a3RcOvW0mfeoVvEOIw",
+            authDomain: "casino-files.firebaseapp.com",
+            databaseURL: "https://casino-files.firebaseio.com",
+            projectId: "casino-files",
+            storageBucket: "casino-files.appspot.com",
+            messagingSenderId: "452700901395"
+        };
+        firebase.initializeApp(config);
+        var db = firebase.firestore();
+    </script>
+
+</body>
+</html>

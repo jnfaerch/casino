@@ -1,0 +1,9 @@
+# Untracked files:
+/node_modules
+/.firebase
+.firebaserc
+firebase.json
+/public/indexFirebase.html
+package-lock.json
+
+# All FireBase files/folders will automatically be generated when you instantiate your own FireBase setup
