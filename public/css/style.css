@@ -250,6 +250,7 @@ body {
     color: black;
     cursor: pointer;
 }
+
 #login {
     margin-left: 15px;
     color: gray;
@@ -261,6 +262,7 @@ body {
     color: black;
     cursor: pointer;
 }
+
 #logout {
     margin-left: 15px;
     color: gray;
