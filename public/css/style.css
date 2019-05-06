@@ -147,7 +147,6 @@ body {
 }
 
 #uploader {
-    -webkit-appearance: none;
     appearance: none;
     margin-top: 20px;
     width: 100%;
