@@ -138,7 +138,6 @@ function loginForm() {
 // Logout
 btnLogout.onclick = function logout() {
     firebase.auth().signOut().then(function () {
-        alert('Sign-out successful.');
         btn.style.display = 'none';
         btnLogin.style.display = 'inline';
         btnLogout.style.display = 'none';
@@ -191,13 +190,30 @@ function contactDatabase() {
         querySnapshot.forEach(function (doc) {
             let date = new Date(doc.data().updated).toLocaleDateString();
 
-            getAllFiles(filesContainer, doc, date);
+            let split = doc.data().name.split('.');
+            let splitName = split[split.length - 1];
+
+            if (splitName === 'pdf') {
+                icon = 'fa-file-pdf';
+            } else if (splitName === 'txt') {
+                icon = 'fa-file-alt';
+            } else if (splitName === 'docx') {
+                icon = 'fa-file-word';
+            } else if (splitName === 'xlsx') {
+                icon = 'fa-file-excel';
+            } else if (splitName === 'pptx') {
+                icon = 'fa-file-powerpoint';
+            } else {
+                icon = 'fa-file';
+            };
+
+            getAllFiles(filesContainer, doc, date, icon);
         });
     });
 };
 
-function getAllFiles(filesContainer, doc, date) {
+function getAllFiles(filesContainer, doc, date, icon) {
     filesContainer.insertAdjacentHTML('beforeend',
-        "<div class='winner-container' onclick='download(\"" + doc.data().name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + doc.data().name + "</span>\n<span class='profit'><i class='fas fa-file-download fa-2x'></i></span>\n</div>"
+        "<div class='winner-container' onclick='download(\"" + doc.data().name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + doc.data().name + "</span>\n<span class='profit'><i class='fas " + icon + " fa-2x'></i></span>\n</div>"
     );
 };
