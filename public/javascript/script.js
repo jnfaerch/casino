@@ -195,10 +195,10 @@ function contactDatabase() {
 
             switch (splitName) {
                 case 'pdf': icon = 'fa-file-pdf'; break;
-                case 'pdf': icon = 'fa-file-alt'; break;
-                case 'pdf': icon = 'fa-file-word'; break;
-                case 'pdf': icon = 'fa-file-excel'; break;
-                case 'pdf': icon = 'fa-file-powerpoint'; break;
+                case 'txt': icon = 'fa-file-alt'; break;
+                case 'docx': icon = 'fa-file-word'; break;
+                case 'xlsx': icon = 'fa-file-excel'; break;
+                case 'pptx': icon = 'fa-file-powerpoint'; break;
                 default: icon = 'fa-file';
             }
 
