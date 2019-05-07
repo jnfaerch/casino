@@ -193,19 +193,14 @@ function contactDatabase() {
             let split = doc.data().name.split('.');
             let splitName = split[split.length - 1];
 
-            if (splitName === 'pdf') {
-                icon = 'fa-file-pdf';
-            } else if (splitName === 'txt') {
-                icon = 'fa-file-alt';
-            } else if (splitName === 'docx') {
-                icon = 'fa-file-word';
-            } else if (splitName === 'xlsx') {
-                icon = 'fa-file-excel';
-            } else if (splitName === 'pptx') {
-                icon = 'fa-file-powerpoint';
-            } else {
-                icon = 'fa-file';
-            };
+            switch (splitName) {
+                case 'pdf': icon = 'fa-file-pdf'; break;
+                case 'pdf': icon = 'fa-file-alt'; break;
+                case 'pdf': icon = 'fa-file-word'; break;
+                case 'pdf': icon = 'fa-file-excel'; break;
+                case 'pdf': icon = 'fa-file-powerpoint'; break;
+                default: icon = 'fa-file';
+            }
 
             getAllFiles(filesContainer, doc, date, icon);
         });
