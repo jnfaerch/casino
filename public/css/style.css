@@ -1,3 +1,7 @@
+:root {
+    --main-color: #9A0932;
+}
+
 * {
     font-family: 'gill sans', arial, sans-serif;
 }
@@ -10,7 +14,7 @@ body {
     height: 70px;
     padding: 0px 20px;
     background-color: #F5EFEF;
-    /* border-bottom: 4px solid #9A0932; */
+    /* border-bottom: 4px solid var(--main-color); */
     box-shadow: 2px 10px 50px -5px rgba(145,145,145,1);
     display: flex;
     justify-content: space-between;
@@ -92,7 +96,7 @@ body {
 }
 
 .red-carpet {
-    border-top: 1.4px solid #9A0932;
+    border-top: 1.4px solid var(--main-color);
     padding-bottom: 20px;
     margin: 0 25px;
     width: 100%;
@@ -130,7 +134,7 @@ body {
     color: black;
     padding: 10px 24px;
     border-radius: 2px;
-    border: 1.4px solid #9A0932;
+    border: 1.4px solid var(--main-color);
     /* Limit width of filename */
     white-space: nowrap;
     overflow: hidden;
@@ -143,7 +147,7 @@ body {
 }
 
 .profit:hover {
-    color: #9A0932;
+    color: var(--main-color);
 }
 
 #uploader {
@@ -173,7 +177,7 @@ body {
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #9A0932;
+    background-color: var(--main-color);
     color: white;
 }
 
@@ -185,7 +189,7 @@ body {
 /* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
-    background-color: #9A0932;
+    background-color: var(--main-color);
     color: white;
 }
 
