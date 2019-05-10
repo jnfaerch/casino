@@ -73,7 +73,7 @@ fileButton.addEventListener('change', function (e) {
         function complete() {
             firebase.storage().ref().child(file.name).getMetadata().then(function (metadata) {
                 writeFileData(metadata);
-                contactDatabase();
+                addNewFile(metadata);
             });
             alert('Your file was successfully uploaded');
             fileButton.value = '';
@@ -88,17 +88,19 @@ function writeFileData(metadata) {
     const type = metadata.type;
     const size = metadata.size;
     const updated = metadata.updated;
+    const user = firebase.auth().currentUser.email;
     db.collection('files').add({
         name: name,
         type: type,
         size: size,
-        updated: updated
+        updated: updated,
+        user: user
     })
     .then(function (docRef) {
         console.log('Document written with ID: ', docRef.id);
         })
     .catch(function (error) {
-        console.error('Error adding document: ', error);
+        alert('Error adding document: ', error);
     });
 };
 
@@ -210,5 +212,25 @@ function contactDatabase() {
 function getAllFiles(filesContainer, doc, date, icon) {
     filesContainer.insertAdjacentHTML('beforeend',
         "<div class='winner-container' onclick='download(\"" + doc.data().name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + doc.data().name + "</span>\n<span class='profit'><i class='fas " + icon + " fa-2x'></i></span>\n</div>"
+    );
+};
+
+function addNewFile(newFile) {
+    const filesContainer = document.getElementById('file-container');
+    let date = new Date(newFile.updated).toLocaleDateString();
+    const split = newFile.name.split('.');
+    const splitName = split[split.length - 1];
+
+    switch (splitName) {
+        case 'pdf': icon = 'fa-file-pdf'; break;
+        case 'txt': icon = 'fa-file-alt'; break;
+        case 'docx': icon = 'fa-file-word'; break;
+        case 'xlsx': icon = 'fa-file-excel'; break;
+        case 'pptx': icon = 'fa-file-powerpoint'; break;
+        default: icon = 'fa-file';
+    }
+
+    filesContainer.insertAdjacentHTML('afterBegin',
+        "<div class='winner-container' onclick='download(\"" + newFile.name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + newFile.name + "</span>\n<span class='profit'><i class='fas " + icon + " fa-2x'></i></span>\n</div>"
     );
 };
