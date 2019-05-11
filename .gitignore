@@ -5,5 +5,6 @@
 firebase.json
 /public/indexFirebase.html
 package-lock.json
+firebase-debug.log
 
 # All FireBase files/folders will automatically be generated when you instantiate your own FireBase setup
