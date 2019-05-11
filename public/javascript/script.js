@@ -141,8 +141,9 @@ function loginForm() {
 btnLogout.onclick = function logout() {
     firebase.auth().signOut().then(function () {
         btn.style.display = 'none';
-        btnLogin.style.display = 'inline';
         btnLogout.style.display = 'none';
+        btnLogin.style.display = 'inline';
+        btnLogin.className = 'logout-event';
     }).catch(function (error) {
         alert('An error happened: ' + error);
     });
