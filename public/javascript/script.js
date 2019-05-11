@@ -184,10 +184,12 @@ function contactDatabase() {
     const filesRef = db.collection('files');
     const filesContainer = document.getElementById('file-container');
 
-    while (filesContainer.hasChildNodes()) {
-        filesContainer.removeChild(filesContainer.firstChild);
-    }
+    // while (filesContainer.hasChildNodes()) {
+    //     filesContainer.removeChild(filesContainer.firstChild);
+    // }
     
+    spinner(filesContainer);
+
     filesRef.orderBy('updated', 'desc').get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             let date = new Date(doc.data().updated).toLocaleDateString();
@@ -206,7 +208,16 @@ function contactDatabase() {
 
             getAllFiles(filesContainer, doc, date, icon);
         });
+        (() => {
+            document.getElementById('spinner').remove();
+        })();
     });
+};
+
+function spinner(filesContainer) {
+    filesContainer.insertAdjacentHTML('afterBegin',
+        "<div id='spinner' class='spinner'>\n<span class='date'></span>\n</div>"
+    );
 };
 
 function getAllFiles(filesContainer, doc, date, icon) {
