@@ -120,6 +120,17 @@ body {
     align-items: center;
 }
 
+.winner-container.new-file {
+    animation-name: new;
+    animation-duration: 2s;
+    background-color: transparent;
+}
+
+@keyframes new {
+    from { background-color: var(--main-color); }
+    to { background-color: transparent; }
+}
+
 .winner-container:hover {
     background-color: #f0f0f0;
 }
