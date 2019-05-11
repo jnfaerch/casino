@@ -231,6 +231,6 @@ function addNewFile(newFile) {
     }
 
     filesContainer.insertAdjacentHTML('afterBegin',
-        "<div class='winner-container' onclick='download(\"" + newFile.name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + newFile.name + "</span>\n<span class='profit'><i class='fas " + icon + " fa-2x'></i></span>\n</div>"
+        "<div class='winner-container new-file' onclick='download(\"" + newFile.name + "\")'>\n<span class='date'>" + date + "</span>\n<span class='winner'>" + newFile.name + "</span>\n<span class='profit'><i class='fas " + icon + " fa-2x'></i></span>\n</div>"
     );
 };
