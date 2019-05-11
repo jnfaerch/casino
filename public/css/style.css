@@ -21,6 +21,24 @@ body {
     align-items: center;
 }
 
+.logout-event {
+    animation-name: logout;
+    animation-duration: 2s;
+}
+
+@keyframes logout {
+    from {
+        color: gray;
+        visibility: hidden;
+        opacity: 0;
+    }
+    to {
+        color: var(--main-color);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 .blackjack {
     position: relative;
     display: flex;
