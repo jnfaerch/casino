@@ -24,19 +24,12 @@ body {
 .logout-event {
     animation-name: logout;
     animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
 }
-
 @keyframes logout {
-    from {
-        color: gray;
-        visibility: hidden;
-        opacity: 0;
-    }
-    to {
-        color: var(--main-color);
-        visibility: visible;
-        opacity: 1;
-    }
+    from { color: gray; }
+    to { color: var(--main-color); }
 }
 
 .blackjack {
@@ -299,7 +292,7 @@ body {
 
 #upload:hover,
 #upload:focus {
-    color: black;
+    color: var(--main-color);
     cursor: pointer;
 }
 
@@ -311,7 +304,7 @@ body {
 
 #login:hover,
 #login:focus {
-    color: black;
+    color: var(--main-color);
     cursor: pointer;
 }
 
@@ -324,6 +317,6 @@ body {
 
 #logout:hover,
 #logout:focus {
-    color: black;
+    color: var(--main-color);
     cursor: pointer;
 }
