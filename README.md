@@ -2,6 +2,13 @@
 
 This app is deliberately kept as small as possible without too many big frameworks and the like.
 
+## Clone the project
+```
+git clone https://github.com/jnfaerch/casino.git
+cd casino
+npm install
+```
+
 ## Firebase
 You need Firebase https://firebase.google.com Hosting, Storage, Cloud Firestore database and Authentication.
 The files 'storage.rules' and 'firestore.rules' are in this repository just to aid you in:
@@ -12,6 +19,7 @@ Google has no API to iterate over the files in storage so you need to place file
 
 - Setup your own Firebase instance https://firebase.google.com/docs/web/setup
 - Install Firebase CLI locally https://firebase.google.com/docs/cli
+- Update `.firebaserc` with your information
 - Switch the information in the `Initialize Firebase` script in the index.html file (this is public information useless without backend access to the Firebase instance)
 - Firestore collection is called 'files'. If you change this you need to change it in the code as well (to ease working with the collection add a 'Dummy' document with one 'Dummy' field containing whatever text and keep it in there. This is to prevent the 'files' collection being deleted when/if you delete all the "real" documents (the file information) during setup and testing).
 You easily upload your files via the website as this populates the storage and the database alike.
