@@ -1,8 +1,6 @@
 # Untracked files:
 /node_modules
 /.firebase
-.firebaserc
-firebase.json
 /public/indexFirebase.html
 package-lock.json
 firebase-debug.log
