@@ -67,22 +67,23 @@ body {
     font-size: 2em;
     color: white;
     z-index: 20;
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
+}
+
+.secret {
+    flex-basis: 50%;
 }
 
 @media only screen and (max-width: 768px) {
     .on-the-table {
         font-size: 1em;
+        justify-content: flex-start;
     }
-}
 
-.half {
-    flex-basis: 50%;
-}
-
-@media only screen and (max-width: 768px) {
-    .half {
-        flex-basis: 0;
+    .secret {
+        flex-basis: 100%;
     }
 }
 
@@ -98,6 +99,18 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+.footer {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.copyleft {
+    color: gray;
 }
 
 @media only screen and (max-width: 992px) {
