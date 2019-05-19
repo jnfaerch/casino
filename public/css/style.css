@@ -111,8 +111,13 @@ body {
     flex-wrap: wrap;
 }
 
-.copyleft {
+.footerText {
     color: gray;
+}
+
+.copyleft {
+    display:inline-block;
+    transform: rotateY(180deg);
 }
 
 .cookies {
