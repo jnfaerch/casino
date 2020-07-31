@@ -1,5 +1,7 @@
 # Public file downloads
 
+https://casino-files.firebaseapp.com/
+
 This app is deliberately kept as small as possible without too many big frameworks and the like.
 
 ## Clone the project
